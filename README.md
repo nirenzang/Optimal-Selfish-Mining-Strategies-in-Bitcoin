@@ -30,7 +30,7 @@ The code that actually computes the optimal selfish mining strategies. The struc
 ### Variants
 Some simple modifications of the code allow us to compute the maximum relative revenue of some certain strategies, or within certain defenses.
 * SM1 strategy outlined in the FC'13 paper ["Majority is not Enough: Bitcoin Mining is Vulnerable"](http://fc14.ifca.ai/papers/fc14_submission_82.pdf) by Ittay Eyal and Emin Gun Sirer: force the attacker to **override** when h>1 and a-h=1, force the attacker to **adopt** when h>a, force the attacker to **match** when h>1 and a=h.
-* The uniform tie breaking defense in the FC'13 paper: fix *gammaRatio*=0.5, allow the attacker to **match** even if `fork~=relevant`.
+* The uniform tie breaking defense in the FC'13 paper: fix *gammaRatio*=0.5, allow the attacker to **match** even if fork~=relevant.
 
 
 ## Citation
