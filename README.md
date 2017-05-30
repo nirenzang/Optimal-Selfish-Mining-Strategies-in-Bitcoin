@@ -1,19 +1,19 @@
 # Optimal-Selfish-Mining-Strategies-in-Bitcoin
 This is an implementation of the Financial Crypto 2016 paper ["Optimal Selfish Mining Strategies in Bitcoin"](http://www.cs.huji.ac.il/~yoni_sompo/pubs/15/SelfishMining.pdf) by Ayelet Sapirshtein, [Yonatan Sompolinsky](http://www.cs.huji.ac.il/~yoni_sompo/), and [Aviv Zohar](http://www.cs.huji.ac.il/~avivz/). It computes the optimal selfish mining strategy and the maximum relative revenue of the selfish miner under a given set of parameters: *alphaPower*, selfish miner's mining power share, and *gammaRatio*, the proportion of honest mining power that would work on the selfish chain during a tie. As the program can only compute block races up to a certain length, the relative revenue is approached by a pair of strict lower and upper bounds.
 
-If you are implementing a selfish mining defense, the developer Ren Zhang would appreciate if you can compare the performance of your defense with my ["Publish or Perish"](https://www.esat.kuleuven.be/cosic/publications/article-2746.pdf) ([evaluation code](https://github.com/nirenzang/Publish-or-Perish)) defense and future defenses. I will put the papers describing future defenses on [my google scholar page](https://scholar.google.be/citations?user=JB1uRvQAAAAJ&hl=en), and the evaluation code in [my github repository](https://github.com/nirenzang).
+If you are implementing a selfish mining defense, the developer Ren Zhang would appreciate if you can compare the performance of your defense with his ["Publish or Perish"](https://www.esat.kuleuven.be/cosic/publications/article-2746.pdf) ([evaluation code](https://github.com/nirenzang/Publish-or-Perish)) defense and future defenses. He will put the papers describing future defenses on [his google scholar page](https://scholar.google.be/citations?user=JB1uRvQAAAAJ&hl=en), and the evaluation code in [his github repository](https://github.com/nirenzang).
 
 ## Quick Start
 If you only need the results:
 1. Make sure you have matlab.
 2. Download the [MDP toolbox for matlab](https://nl.mathworks.com/matlabcentral/fileexchange/25786-markov-decision-processes--mdp--toolbox), decompress it, put it in a directory such as '/users/yourname/Desktop/matlab/MDPtoolbox/fsroot/MDPtoolbox', copy the path.
 3. Download the code, open Matlab, change the working dir to the dir of the code.
-4. Open Init.m, paste your MDP toolbox path in the first line 
+4. Open `Init.m`, paste your MDP toolbox path in the first line 
 ```
 addpath('/users/yourname/Desktop/matlab/MDPtoolbox/fsroot/MDPtoolbox');
 ```
-5. Modify *alphaPower* and *gammaRatio* in Init.m, make sure 0\<*alphaPower*<=0.49, 0<=*gammaRatio*<=1.
-6. Run Init.m.
+5. Modify *alphaPower* and *gammaRatio* in `Init.m`, make sure 0\<*alphaPower*<=0.49, 0<=*gammaRatio*<=1.
+6. Run `Init.m`.
 
 ## Implementation
 
@@ -29,7 +29,7 @@ The code that actually computes the optimal selfish mining strategies. The struc
 
 ### Variants
 Some simple modifications of the code allow us to compute the maximum relative revenue of some certain strategies, or within certain defenses.
-* SM1 strategy outlined in the FC'13 paper "Majority is not Enough: Bitcoin Mining is Vulnerable" by Ittay Eyal and Emin Gun Sirer: force the attacker to **override** when h>1 and a-h=1, force the attacker to **adopt** when h>a.
+* SM1 strategy outlined in the FC'13 paper ["Majority is not Enough: Bitcoin Mining is Vulnerable"](http://fc14.ifca.ai/papers/fc14_submission_82.pdf) by Ittay Eyal and Emin Gun Sirer: force the attacker to **override** when h>1 and a-h=1, force the attacker to **adopt** when h>a, force the attacker to **match** when h>1 and a=h.
 * The uniform tie breaking defense in the FC'13 paper: fix *gammaRatio*=0.5, allow the attacker to **match** even if `fork~=relevant`.
 
 
