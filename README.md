@@ -1,11 +1,11 @@
 # Optimal-Selfish-Mining-Strategies-in-Bitcoin
-This is an implementation of the Financial Crypto 2016 paper "Optimal Selfish Mining Strategies in Bitcoin" by Ayelet Sapirshtein, Yonatan Sompolinsky, and Aviv Zohar. It computes the optimal selfish mining strategy and the maximum relative revenue of the selfish miner under a given set of parameters: *alphaPower*, selfish miner's mining power share, and *gammaRatio*, the proportion of honest mining power that would work on the selfish chain during a tie. As the program can only compute block races up to a certain length, the relative revenue is approached by a pair of strict lower and upper bounds. Check [Yonatan Sompolinsky's homepage](http://www.cs.huji.ac.il/~yoni_sompo/) to download the paper for more details.
+This is an implementation of the Financial Crypto 2016 paper ["Optimal Selfish Mining Strategies in Bitcoin"](http://www.cs.huji.ac.il/~yoni_sompo/pubs/15/SelfishMining.pdf) by Ayelet Sapirshtein, [Yonatan Sompolinsky](http://www.cs.huji.ac.il/~yoni_sompo/), and [Aviv Zohar](http://www.cs.huji.ac.il/~avivz/). It computes the optimal selfish mining strategy and the maximum relative revenue of the selfish miner under a given set of parameters: *alphaPower*, selfish miner's mining power share, and *gammaRatio*, the proportion of honest mining power that would work on the selfish chain during a tie. As the program can only compute block races up to a certain length, the relative revenue is approached by a pair of strict lower and upper bounds.
 
-If you are implementing a selfish mining defense, the coder Ren Zhang would appreciate if you can compare the performance of your defense with my "Publish or Perish" defense and future defenses, whose code can be found in my github repository, and the papers should be reachable from [my google scholar page](https://scholar.google.be/citations?user=JB1uRvQAAAAJ&hl=en).
+If you are implementing a selfish mining defense, the developer Ren Zhang would appreciate if you can compare the performance of your defense with my ["Publish or Perish"](https://www.esat.kuleuven.be/cosic/publications/article-2746.pdf) ([evaluation code](https://github.com/nirenzang/Publish-or-Perish)) defense and future defenses. I will put the papers describing future defenses on [my google scholar page](https://scholar.google.be/citations?user=JB1uRvQAAAAJ&hl=en), and the evaluation code in [my github repository](https://github.com/nirenzang).
 
 ## Quick Start
 If you only need the results:
-1. Makesure you have matlab.
+1. Make sure you have matlab.
 2. Download the [MDP toolbox for matlab](https://nl.mathworks.com/matlabcentral/fileexchange/25786-markov-decision-processes--mdp--toolbox), decompress it, put it in a directory such as '/users/yourname/Desktop/matlab/MDPtoolbox/fsroot/MDPtoolbox', copy the path.
 3. Download the code, open Matlab, change the working dir to the dir of the code.
 4. Open Init.m, paste your MDP toolbox path in the first line 
@@ -59,7 +59,7 @@ Chadès, I., Chapron, G., Cros, M. J., Garcia, F., & Sabbadin, R. (2014). MDPtoo
 }
 ```
 ## Disclaimer
-Any mistake in the code is due to the coder.
+Any mistake in the code is due to the developer.
 
 ## License
 This code is licensed under GNU GPLv3.
